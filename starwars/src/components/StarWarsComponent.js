@@ -27,4 +27,6 @@ export function StarWarsComponent(props) {
 
 const StarWarsCard = styled(Card)`
 	margin: 15px 1.5% 25px;
+	border-radius: 5px;
+	background-color: rgba(201, 181, 148, 0.6);
 `;
