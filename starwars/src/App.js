@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StarWarsApi from './components/StarWarsApi';
+import { StarWarsComponent } from './components/StarWarsComponent';
 
 import './App.css';
 
@@ -13,7 +14,7 @@ const App = () => {
 	const [starWarsCharacters, setStarWarsCharacters] = useState();
 
 	useEffect(() => {
-		//	StarWarsApi(setStarWarsCharacters);
+		StarWarsApi(setStarWarsCharacters);
 	}, []);
 
 	// name
@@ -25,9 +26,12 @@ const App = () => {
 	if (!starWarsCharacters) {
 		return <h2>Loading...</h2>;
 	}
+
 	return (
 		<div className="App">
 			<h1 className="Header">React Wars</h1>
+
+			<StarWarsComponent starWarsCharacters={starWarsCharacters} />
 		</div>
 	);
 };
